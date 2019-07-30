@@ -9,6 +9,6 @@ job('build-artifact') {
             mavenInstallation('maven')
             goals('-e clean install')
      }
-        job('Deploy to Staging')
+        trigger('Deploy to Staging')
   }
 }
