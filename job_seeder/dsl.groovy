@@ -10,4 +10,5 @@ job('build-artifact') {
             goals('-e clean install')
      }
   }
+}
   job('Deploy to Staging')
