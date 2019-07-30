@@ -7,12 +7,7 @@ job('build-artifact') {
     triggers {
         scm('*/1 * * * *')
     }
-    tools {
-        maven 'Maven'
-    }
     steps {
-        script {
-            sh "mvn -e clean install"
-            }
+            'Maven'('-e clean install')
         }
     }
