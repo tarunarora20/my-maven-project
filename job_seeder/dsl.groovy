@@ -7,5 +7,7 @@ mavenjob('build-artifact') {
     triggers {
         scm('*/1 * * * *')
     }
-    goals('-e clean install')
-    }
+    steps {
+        maven('-e clean test')
+     }
+  }
