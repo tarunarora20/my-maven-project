@@ -13,3 +13,4 @@ job('build-artifact') {
             goals('-e clean install')
      }
   }
+}
