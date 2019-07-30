@@ -8,6 +8,6 @@ job('build-artifact') {
         scm('*/1 * * * *')
     }
     steps {
-        maven('-e clean test')
+        Maven('-e clean test')
     }
 }
