@@ -8,7 +8,7 @@ job('build-artifact') {
         scm('*/1 * * * *')
     }
     steps {
-        withEnv(["PATH+MVN=${tool 'maven'}/bin"]) {
+        withEnv(["PATH+MVN=${tool 'Maven'}/bin"]) {
             sh "mvn -e clean install"
             }
         }
