@@ -4,13 +4,10 @@ job('build-artifact') {
     scm {
         git(gitUrl)
     }
-    triggers {
-        scm('*/1 * * * *')
-    }
     steps {
         maven {
             mavenInstallation('maven')
             goals('-e clean install')
      }
   }
-}
+  job('Deploy to Staging')
