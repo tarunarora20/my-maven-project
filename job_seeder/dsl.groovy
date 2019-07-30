@@ -1,6 +1,6 @@
 def gitUrl = 'https://github.com/tarunarora20/my-maven-project.git'
 
-mavenjob('build-artifact') {
+job('build-artifact') {
     scm {
         git(gitUrl)
     }
