@@ -1,28 +1,13 @@
-def createPipelineJob(def jobName, def repoName) {
-    return pipelineJob(jobName) {
-        def repository = "https://github.com/sujan-reads/my-maven-project.git"
+def gitUrl = 'https://github.com/tarunarora20/my-maven-project.git'
 
-        description 'CI/CD Pipeline'
-
-        triggers {
-            scm('* * * * *')
-        }
-
-        definition {
-            cpsScm {
-                scm {
-                    git {
-                        remote {
-                            url(repository)
-                        }
-                        branches('master')
-                        scriptPath('Jenkinsfile')
-                        extensions {} //Required to prevent Git tag
-                    }
-                }
-            }
-        }
+job('build-artifact') {
+    scm {
+        git(gitUrl)
+    }
+    triggers {
+        scm('*/1 * * * *')
+    }
+    steps {
+        maven('-e clean test')
     }
 }
-
-createPipelineJob('My-Maven-Project','my-maven-project')
