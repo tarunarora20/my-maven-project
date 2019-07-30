@@ -8,6 +8,6 @@ job('build-artifact') {
         scm('*/1 * * * *')
     }
     steps {
-            'Maven'('-e clean install')
+            'Maven'(-e clean install)
         }
     }
