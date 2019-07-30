@@ -8,7 +8,9 @@ job('build-artifact') {
         maven {
             mavenInstallation('maven')
             goals('-e clean install')
-     }
-        trigger('Deploy to Staging')
-  }
+            }
+        publishers {
+        downstream('Deploy to Staging', 'SUCCESS')
+        }
+    }
 }
